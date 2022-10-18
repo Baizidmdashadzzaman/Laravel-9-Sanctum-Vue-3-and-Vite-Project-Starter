@@ -34,7 +34,7 @@
         <link rel="stylesheet" type="text/css" href="{{asset('app-assets/css/plugins/charts/chart-apex.css')}}">
         <link rel="stylesheet" type="text/css" href="{{asset('app-assets/css/plugins/extensions/ext-component-toastr.css')}}">
         <link rel="stylesheet" type="text/css" href="{{asset('assets/css/style.css')}}">
-
+        <link rel="stylesheet" type="text/css" href="{{asset('app-assets/css/pages/authentication.css')}}">
 
         
     </head>

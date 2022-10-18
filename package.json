@@ -15,12 +15,14 @@
         "sass": "^1.55.0",
         "sass-loader": "^11.0.1",
         "vite": "^3.1.6",
-        "vue": "^3.2.40",
+        "vue": "^3.2.41",
         "vue-template-compiler": "^2.7.10"
     },
     "dependencies": {
         "@vitejs/plugin-vue": "^3.1.2",
+        "feather-icons": "^4.29.0",
         "laravel-vue-pagination": "^3.0.0",
+        "vue-feather": "^2.0.0",
         "vue-icon": "^2.3.0",
         "vue-loader": "^17.0.0",
         "vue-router": "^4.1.5",

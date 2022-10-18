@@ -12,6 +12,7 @@ const DahboardLayout = () => import('@/components/layouts/Default.vue')
 
 /* Authenticated Component */
 const Dashboard = () => import('@/components/Dashboard.vue')
+const Setting = () => import('@/components/Setting/Setting.vue')
 /* Authenticated Component */
 
 
@@ -47,6 +48,23 @@ const routes = [
                 component: Dashboard,
                 meta: {
                     title: `Dashboard`
+                }
+            }
+        ]
+    },
+    {
+        path: "/setting",
+        component: DahboardLayout,
+        meta: {
+            middleware: "auth"
+        },
+        children: [
+            {
+                name: "setting",
+                path: '/',
+                component: Setting,
+                meta: {
+                    title: `Setting`
                 }
             }
         ]
