@@ -35,7 +35,11 @@
         <link rel="stylesheet" type="text/css" href="{{asset('app-assets/css/plugins/extensions/ext-component-toastr.css')}}">
         <link rel="stylesheet" type="text/css" href="{{asset('assets/css/style.css')}}">
         <link rel="stylesheet" type="text/css" href="{{asset('app-assets/css/pages/authentication.css')}}">
-
+        <style >
+            .sr-only{
+                display: none;
+            }
+        </style>
         
     </head>
     
@@ -51,15 +55,16 @@
         <script src="{{asset('app-assets/js/core/app-menu.js')}}" defer></script>
         <script src="{{asset('app-assets/js/core/app.js')}}" defer></script>
         <script src="{{asset('app-assets/js/scripts/pages/dashboard-ecommerce.js')}}" defer></script>
+        <script src="{{asset('app-assets/js/scripts/extensions/ext-component-blockui.js')}}" defer></script>
         <script>
-            $(window).on('load', function() {
-                if (feather) {
-                    feather.replace({
-                        width: 14,
-                        height: 14
-                    });
-                }
-            })
+            // $(window).on('load', function() {
+            //     if (feather) {
+            //         feather.replace({
+            //             width: 14,
+            //             height: 14
+            //         });
+            //     }
+            // })
         </script> 
         @vite(['resources/js/app.js'])   
     </body>

@@ -1,36 +1,4 @@
 <template>
-    <!-- <div>
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-            <div class="container-fluid">
-                <a class="navbar-brand" href="#">Laravel9 Vue Vite</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNavDropdown">
-                    <ul class="navbar-nav me-auto">
-                        <li class="nav-item">
-                            <router-link :to="{name:'dashboard'}" class="nav-link">Home <span class="sr-only">(current)</span></router-link>
-                        </li>
-                    </ul>
-                    <div class="d-flex">
-                        <ul class="navbar-nav">
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    {{ user.name }}
-                                </a>
-                                <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuLink">
-                                    <a class="dropdown-item" href="javascript:void(0)" @click="logout">Logout</a>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </nav>
-        <main class="mt-3">
-            <router-view></router-view>
-        </main>
-    </div> -->
 
 <div class="pace pace-inactive"><div class="pace-progress" style="transform: translate3d(100%, 0px, 0px);" data-progress-text="100%" data-progress="99">
   <div class="pace-progress-inner"></div>
@@ -386,7 +354,7 @@
                     <span data-i18n="Apps &amp; Pages">Apps &amp; Pages</span>
                 </li>
                 
-                <li :class = "(activemenu == 1)?'nav-item active':'nav-item'">
+                <li :class="(activemenu == 1)?'nav-item active':'nav-item'">
                     <router-link :to="{name:'dashboard'}" class="d-flex align-items-center" >
                         <vue-feather type="monitor"></vue-feather>
                         <span class="menu-title text-truncate" data-i18n="Email">Dashboard</span>
@@ -394,23 +362,73 @@
                 </li>
 
                 <li class="nav-item"></li>
-                <li :class = "(activemenu == 2)?'nav-item active':'nav-item'">
+                <li :class="(activemenu == 2)?'nav-item active':'nav-item'">
                     <router-link :to="{name:'setting'}" class="d-flex align-items-center" >
                         <vue-feather type="command"></vue-feather>
                         <span class="menu-title text-truncate" data-i18n="Email">Setting</span>
                     </router-link>
                 </li>
                 
+                <li class=" navigation-header">
+                    <span data-i18n="Apps &amp; Pages">System users</span>
+                </li>
+                <li :class="(activemenu == 3)?'nav-item active':'nav-item'">
+                    <router-link :to="{name:'setting'}" class="d-flex align-items-center" >
+                        <vue-feather type="users"></vue-feather>
+                        <span class="menu-title text-truncate" data-i18n="Email">Admin</span>
+                    </router-link>
+                </li>
+                <li :class="(activemenu == 4)?'nav-item active':'nav-item'">
+                    <router-link :to="{name:'setting'}" class="d-flex align-items-center" >
+                        <vue-feather type="user-check"></vue-feather>
+                        <span class="menu-title text-truncate" data-i18n="Email">Customer</span>
+                    </router-link>
+                </li>
+                
+                <li class=" navigation-header">
+                    <span data-i18n="Apps &amp; Pages">Products</span>
+                </li>
+                <li :class="(activemenu == 5)?'nav-item active':'nav-item'">
+                    <router-link :to="{name:'categorylist'}" class="d-flex align-items-center" >
+                        <vue-feather type="folder"></vue-feather>
+                        <span class="menu-title text-truncate" data-i18n="Email">Category</span>
+                    </router-link>
+                </li>
+                <li :class="(activemenu == 6)?'nav-item active':'nav-item'">
+                    <router-link :to="{name:'setting'}" class="d-flex align-items-center" >
+                        <vue-feather type="folder-plus"></vue-feather>
+                        <span class="menu-title text-truncate" data-i18n="Email">Subcategory</span>
+                    </router-link>
+                </li>
+                <li :class="(activemenu == 7)?'nav-item active':'nav-item'">
+                    <router-link :to="{name:'setting'}" class="d-flex align-items-center" >
+                        <vue-feather type="shopping-cart"></vue-feather>
+                        <span class="menu-title text-truncate" data-i18n="Email">Product</span>
+                    </router-link>
+                </li>
                 
                 <li class=" navigation-header">
                     <span data-i18n="Apps &amp; Pages">Others</span>
                 </li>
-                <li class=" nav-item">
+                <li :class="(activemenu == 8)?'nav-item active':'nav-item'">
+                    <router-link :to="{name:'setting'}" class="d-flex align-items-center" >
+                        <vue-feather type="mail"></vue-feather>
+                        <span class="menu-title text-truncate" data-i18n="Email">Email</span>
+                    </router-link>
+                </li>
+                <li :class="(activemenu == 9)?'nav-item active':'nav-item'">
+                    <router-link :to="{name:'setting'}" class="d-flex align-items-center" >
+                        <vue-feather type="bell"></vue-feather>
+                        <span class="menu-title text-truncate" data-i18n="Email">SMS</span>
+                    </router-link>
+                </li>
+                <li class="nav-item">
                     <a class="d-flex align-items-center" href="javascript:void(0)" @click="logout">
                         <vue-feather type="power"></vue-feather>
                         <span class="menu-title text-truncate" data-i18n="Chat">Logout</span>
                     </a>
                 </li>
+
                 
 
             
@@ -423,7 +441,7 @@
     <!-- END: Main Menu-->
 
     <!-- BEGIN: Content-->
-       <router-view v-on:changeActiveMenu="changeActiveMenu"></router-view>
+       <router-view v-on:changeActiveMenu="changeActiveMenu" v-on:checkAuth="checkAuth"></router-view>
     <!-- END: Content-->
 
     <div class="sidenav-overlay" style="touch-action: pan-y; user-select: none;"></div>
@@ -431,7 +449,11 @@
 
     <!-- BEGIN: Footer-->
     <footer class="footer footer-static footer-light">
-        <p class="clearfix mb-0"><span class="float-md-start d-block d-md-inline-block mt-25">COPYRIGHT © 2021<a class="ms-25" href="https://1.envato.market/pixinvent_portfolio" target="_blank">Pixinvent</a><span class="d-none d-sm-inline-block">, All rights Reserved</span></span><span class="float-md-end d-none d-md-block">Hand-crafted &amp; Made with<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-heart"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg></span></p>
+        <p class="clearfix mb-0">
+            <span class="float-md-start d-block d-md-inline-block mt-25">
+            <!-- COPYRIGHT © 2021<a class="ms-25" href="https://1.envato.market/pixinvent_portfolio" target="_blank">Pixinvent</a><span class="d-none d-sm-inline-block">, All rights Reserved</span> -->
+            </span>
+        <span class="float-md-end d-none d-md-block">Hand-crafted &amp; Made with<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-heart"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg></span></p>
     </footer>
     <button class="btn btn-primary btn-icon scroll-top waves-effect waves-float waves-light" type="button"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-up"><line x1="12" y1="19" x2="12" y2="5"></line><polyline points="5 12 12 5 19 12"></polyline></svg></button>
     <!-- END: Footer-->
@@ -464,6 +486,21 @@ export default {
             await axios.post('/logout').then(({data})=>{
                 this.signOut()
                 this.$router.push({name:"login"})
+            })
+        },
+        checkAuth()
+        {
+            axios
+                 .get(`/api/user`)
+                 .then(response => {
+                    return response.data
+                 })
+                 .then(data => {
+                    console.log(data)
+                 })
+                 .catch(error => {
+                    this.signOut();
+                    this.$router.push({name:"login"})
             })
         },
         openSearchMenu(){
